@@ -1,0 +1,26 @@
+<html>
+<script>
+    console.log(window.location.href);
+    var url = new URL(window.location.href)
+    var urlParams = new URLSearchParams(url.search);
+    var pid = urlParams.get('PROLIFIC_PID');
+    var study_id = urlParams.get('STUDY_ID');
+    var session_id = urlParams.get('SESSION_ID');
+    console.log(pid);
+    var page = Math.floor(Math.random() * 4);
+    if (page ==0) {
+        var qualtrics_url_path = "https://stanforduniversity.qualtrics.com/jfe/form/SV_e5y9DYWCjHua0D4";
+    } else if (page ==1) {
+        var qualtrics_url_path = 'https://stanforduniversity.qualtrics.com/jfe/form/SV_064GfPpIakApECq';
+    } else if (page ==2) {
+        var qualtrics_url_path = 'https://stanforduniversity.qualtrics.com/jfe/form/SV_9RMktBJRpWVhMl8';
+    } else if (page ==3) {
+        var qualtrics_url_path = 'https://stanforduniversity.qualtrics.com/jfe/form/SV_73azMhsZQgjDS4u';
+    }
+    console.log(qualtrics_url_path)
+    var full_path = qualtrics_url_path.concat("/?PROLIFIC_PID=",pid,"&STUDY_ID=",study_id,"&session_id=",session_id)
+    console.log(full_path);
+    window.location.href =full_path
+</script>
+hi
+</html>
